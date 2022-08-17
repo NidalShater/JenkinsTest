@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Auto Building..'
+                echo 'Auto Building.. with ${GIT_AUTHOR_NAME}'
             }
         }
         stage('Test') {
             when { 
                 expression {
-                    BRANCH_NAME == 'main2'
+                    BRANCH_NAME == 'main'
                 }
             }
             steps {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Auto Deploying....'
+                echo 'Auto Deploying.... with ${GIT_AUTHOR_EMAIL}'
             }
         }
     }

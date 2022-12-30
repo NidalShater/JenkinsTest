@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Auto Building. with ${BUILD_ID}"
+                echo "Auto Building with ${BUILD_ID}"
             }
         }
         stage('Test') {
